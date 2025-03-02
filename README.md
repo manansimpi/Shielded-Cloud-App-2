@@ -155,3 +155,22 @@ Replace:
   - <your-iam-instance-profile> → The IAM role attached to your EC2 instances (must allow S3 access if needed).
 ```
 -  Option 2: From AWS GUI
+
+
+
+https://github.com/user-attachments/assets/2761be96-08aa-446e-a07d-b68dea631d8f
+
+<br><br>
+
+![Screenshot 2025-03-01 234735](https://github.com/user-attachments/assets/97e3fb2a-9d7a-4db7-beea-e628346ecf62)
+
+<br><br>
+
+![Screenshot 2025-03-02 000502](https://github.com/user-attachments/assets/0ccb1545-7225-48a2-9a25-ad7a9c9cfee9)
+
+* An Issue faced: I believe that since we have enabled Scale-in permissions to the ASG it's automatically terminating instances after a while, and then again creating a new instance(Basically creating a loop) probably due to low CPU utilization. So let's make changes to it in the ASG settings and see.
+
+   - Indeed, we were on the right path, and performing the steps below resolved the automatic termination of the instances, stopping the loop.
+
+https://github.com/user-attachments/assets/2a5fb456-f00c-4494-97d6-18bc642fd21b
+

@@ -172,9 +172,40 @@ https://github.com/user-attachments/assets/2761be96-08aa-446e-a07d-b68dea631d8f
 
 1. Performing a Load Test on the Load Balancer.
 
- - Copy the actual DNS name of the Load Balancer and paste it in the browser to see which Instance it's running on.
+ - Copy the actual DNS name of the Load Balancer and paste it in the browser to see which instance it's running on.
  - Try refreshing it to make sure LoadBalancer's working.
 
 
 https://github.com/user-attachments/assets/9db32535-7256-49ea-91ff-9e6bdb345c96
 
+<br><br>
+
+2. Simulating a Failure and Observing ASG Recovery to ensure ASG correctly replaces unhealthy instances.
+ 
+ - Steps to Simulate and Observe Recovery
+   - Manually stop or terminate an instance in the ASG.
+   - Check ASG Activity History for a replacement instance launching.
+   - Verify the new instance gets registered as healthy in the Target Group.
+   - Monitor Load Balancer logs to confirm traffic shift to healthy instances.
+
+https://github.com/user-attachments/assets/7bb03439-3933-4a78-8822-52f666586a9a
+
+<br><br>
+
+3. Monitoring Auto Scaling Group Behavior
+
+- Steps to Track Scaling Events:
+  - Check Instance Scaling in EC2 Console.
+  - Click on your ASG and go to the Activity tab.
+  - Look for recent scaling events (e.g., new instances launching or terminating).
+
+![Screenshot 2025-03-02 234236](https://github.com/user-attachments/assets/497ffe47-e7d2-4762-9aef-711251101968)
+
+<br><br>
+
+- Verify Load Balancer Target Health:
+  - Go to EC2 > Target Groups.
+  - Select the Target Group associated with your Load Balancer.
+  - Click on the Targets tab and check if instances are marked as healthy.
+
+ ![Screenshot 2025-03-02 234756](https://github.com/user-attachments/assets/3805f6f5-f321-4d0d-bb6e-6bcb1cc8a1cf)

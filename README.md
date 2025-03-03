@@ -168,9 +168,13 @@ https://github.com/user-attachments/assets/2761be96-08aa-446e-a07d-b68dea631d8f
 
 ![Screenshot 2025-03-02 000502](https://github.com/user-attachments/assets/0ccb1545-7225-48a2-9a25-ad7a9c9cfee9)
 
-* An Issue faced: I believe that since we have enabled Scale-in permissions to the ASG it's automatically terminating instances after a while, and then again creating a new instance(Basically creating a loop) probably due to low CPU utilization. So let's make changes to it in the ASG settings and see.
+#### Testing the Load Balancer and Auto Scaling Group (ASG)
 
-   - Indeed, we were on the right path, and performing the steps below resolved the automatic termination of the instances, stopping the loop.
+1. Performing a Load Test on the Load Balancer.
 
-https://github.com/user-attachments/assets/2a5fb456-f00c-4494-97d6-18bc642fd21b
+ - Copy the actual DNS name of the Load Balancer and paste it in the browser to see which Instance it's running on.
+ - Try refreshing it to make sure LoadBalancer's working.
+
+
+https://github.com/user-attachments/assets/9db32535-7256-49ea-91ff-9e6bdb345c96
 
